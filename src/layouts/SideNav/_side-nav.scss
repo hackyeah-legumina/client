@@ -36,6 +36,12 @@
                     transform: translateX(35%);
                 }
             }
+
+            &__buttons {
+                button:nth-child(2) {
+                    display: none;
+                }
+            }
         }
     }
 
@@ -67,5 +73,11 @@
         left: 0rem;
         width: 5rem;
         margin: auto;
+    }
+
+    &__buttons {
+        button {
+            margin-right: 3rem;
+        }
     }
 }

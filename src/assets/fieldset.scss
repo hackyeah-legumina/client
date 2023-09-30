@@ -1,0 +1,64 @@
+@use "../assets/var.scss" as c;
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    align-self: center;
+
+    & > * {
+        padding-bottom: 1rem;
+    }
+
+    .react-aria-Label {
+        visibility: hidden;
+    }
+
+    .react-aria-Link {
+        cursor: pointer;
+
+        &:last-of-type {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.react-aria-TextField {
+    --text-color: c.$bg4;
+    --focus-ring-color: slateblue;
+
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    .react-aria-Input,
+    .react-aria-TextArea {
+        padding: 1rem;
+        margin: 0;
+        border-radius: 6px;
+        background: c.$bg1;
+        font-size: 1.143rem;
+        color: c.$bg4;
+
+        &[data-focused] {
+            outline: none;
+            border-color: c.$bg2;
+            box-shadow: 0 0 0 1px var(--focus-ring-color);
+        }
+    }
+}
+
+// @media (forced-colors: active) {
+//     .react-aria-TextField {
+//         --field-border: ButtonBorder;
+//         --field-border-disabled: GrayText;
+//         --field-background: Field;
+//         --text-color: FieldText;
+//         --text-color-disabled: GrayText;
+//         --focus-ring-color: Highlight;
+//         --invalid-color: LinkText;
+//     }
+// }
