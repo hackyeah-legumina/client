@@ -10,6 +10,8 @@ import {
 import Root from "./pages/Root/Root.tsx"
 import Index from "./pages/Index/Index.tsx"
 import "./App.scss"
+import "react-toastify/dist/ReactToastify.css"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 const rootRoute = new RootRoute({
   component: Root,
@@ -31,8 +33,12 @@ declare module "@tanstack/react-router" {
   }
 }
 
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 )
