@@ -1,0 +1,71 @@
+@use "../../assets/var.scss" as c;
+
+.side-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 40vw;
+    background-color: c.$bg3;
+    margin: 2rem;
+    margin-right: 0;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 3rem;
+    color: c.$bg1;
+    transition: 0.3s;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    box-sizing: content-box;
+
+    &--not-expanded {
+        width: 5rem;
+        align-items: center;
+        align-content: center;
+        color: transparent;
+
+        & > .side-nav {
+            &__header {
+                grid-template-columns: 3rem 0;
+                div:not(:first-of-type) {
+                    visibility: hidden;
+                }
+
+                div:first-of-type {
+                    transform: translateX(35%);
+                }
+            }
+        }
+    }
+
+    &__header {
+        display: grid;
+        grid-template-columns: 3rem 1fr;
+
+        & > div:first-of-type {
+            height: 3rem;
+            background-color: white;
+            border-radius: 100%;
+        }
+
+        & > div:nth-child(2) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            text-align: center;
+            padding: 0 5rem;
+
+            & > div:not(:nth-child(3)) {
+                border-right: 1px solid c.$bg1;
+            }
+        }
+    }
+
+    &__profile-button {
+        bottom: 0rem;
+        left: 0rem;
+        width: 5rem;
+        margin: auto;
+    }
+}
