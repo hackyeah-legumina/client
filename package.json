@@ -17,7 +17,9 @@
     "react-aria": "^3.28.0",
     "react-aria-components": "^1.0.0-beta.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "@tanstack/router": "TanStack/router@v0.0.1-beta.192",
+    "@tanstack/router-devtools": "0.0.1-beta.191"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^4.34.1",

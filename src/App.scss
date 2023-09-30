@@ -1,3 +1,19 @@
+@use "./layouts/SideNav/side-nav";
+@use "./assets/var.scss" as c;
+
+@use "./assets/button.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    background-color: c.$bg4;
+    min-height: 100vh;
+}
+
+:root {
+    font-family: "Inter", sans-serif;
 }
