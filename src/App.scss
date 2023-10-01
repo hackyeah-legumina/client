@@ -1,8 +1,11 @@
 @use "./layouts/SideNav/side-nav";
 @use "./assets/var.scss" as c;
+@use "./pages/Index/index";
 
 @use "./assets/button.scss";
 @use "./assets/fieldset.scss";
+@use "./assets/tabs.scss";
+@use "./assets/checkbox.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
@@ -11,8 +14,30 @@
 }
 
 body {
-    background-color: c.$bg4;
+    background-color: c.$g;
     min-height: 100vh;
+}
+
+#t1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background-color: c.$bg1;
+    clip-path: polygon(0 30%, 0% 100%, 100% 100%);
+    box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 1);
+}
+
+#t2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background-color: c.$bg2;
+    clip-path: polygon(100% 30%, 0% 100%, 100% 100%);
+    box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 1);
 }
 
 :root {

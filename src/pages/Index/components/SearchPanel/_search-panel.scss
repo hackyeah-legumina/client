@@ -1,0 +1,57 @@
+@use "../../../../assets/var.scss" as c;
+
+.search-panel {
+    color: c.$bg4;
+
+    &__label {
+        margin: 1.5rem 0;
+    }
+
+    &__items {
+        padding: 3rem;
+        @include c.glass;
+        background-color: c.$g;
+        opacity: 75%;
+        border-radius: 3rem;
+        height: calc(100vh - 20rem);
+        overflow: scroll;
+        scrollbar-gutter: 10rem;
+        border-right: 10px solid transparent;
+    }
+
+    // &__items-inner {
+    //     width: 90%;
+    //     overflow-y: auto;
+    // }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 7rem 1fr;
+        margin-bottom: 1rem;
+        grid-gap: 1rem;
+
+        & > div:first-child {
+            height: 7rem;
+            background-color: white;
+            border-radius: 2rem;
+        }
+    }
+}
+
+.filters {
+    padding: 3rem;
+    @include c.glass;
+    background-color: c.$g;
+    opacity: 75%;
+    border-radius: 3rem;
+    height: calc(100vh - 20rem);
+    overflow: scroll;
+    scrollbar-gutter: 10rem;
+    border-right: 10px solid transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .react-aria-Label {
+        font-size: larger;
+    }
+}

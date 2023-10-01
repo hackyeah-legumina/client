@@ -21,7 +21,11 @@ const RegisterLink = ({
   </Link>
 )
 
-const Auth = () => {
+const Auth = ({
+  setIsAuth,
+}: {
+  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>
+}) => {
   const user = useUser()
   const [type, setType] = useState<"login" | "register">("login")
   const [__, setAToken] = useLocalStorage<null | string>("accessToken", null)
@@ -31,6 +35,8 @@ const Auth = () => {
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
+
+  console.log(user.data?.data)
 
   const registerMutation = useMutation({
     mutationKey: ["register"],
@@ -147,6 +153,7 @@ const Auth = () => {
             <RegisterLink setType={setType} type={type} />
           </>
         ) : null}
+        <Link onPress={() => setIsAuth(false)}>Continue as guest</Link>
       </fieldset>
     </div>
   )

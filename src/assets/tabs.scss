@@ -1,0 +1,94 @@
+@use "../assets/var.scss" as c;
+
+.react-aria-Tabs {
+    margin-top: 1rem;
+    --highlight-color: c.$bg4;
+    --text-color: var(--spectrum-global-color-gray-700);
+    --text-color-hover: var(--spectrum-global-color-gray-800);
+    --text-color-selected: var(--spectrum-global-color-gray-900);
+    --text-color-disabled: var(--spectrum-alias-text-color-disabled);
+
+    display: flex;
+
+    &[data-orientation="horizontal"] {
+        flex-direction: column;
+    }
+
+    &[data-orientation="vertical"] {
+        flex-direction: row;
+    }
+}
+
+.react-aria-TabList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &[data-orientation="horizontal"] {
+        .react-aria-Tab {
+            border-bottom: 3px solid var(--border-color, transparent);
+        }
+    }
+
+    &[data-orientation="vertical"] {
+        flex-direction: column;
+        border-right: 1px solid gray;
+
+        .react-aria-Tab {
+            border-right: 3px solid var(--border-color, transparent);
+        }
+    }
+}
+
+.react-aria-Tab {
+    padding: 10px;
+    cursor: default;
+    outline: none;
+    position: relative;
+    color: var(--text-color);
+    transition: color 200ms;
+    text-align: center;
+    cursor: pointer;
+
+    & > span {
+        padding: 0.3rem 1.5rem;
+        border-radius: 1rem;
+    }
+
+    &[data-hovered],
+    &[data-focused] {
+        color: var(--text-color-hover);
+    }
+
+    &[data-selected] {
+        & > span {
+            font-weight: bold;
+            border: 1px solid c.$bg4 !important;
+        }
+    }
+
+    &[data-disabled] {
+        color: var(--text-color-disabled);
+        &[data-selected] {
+            --border-color: var(--text-color-disabled);
+        }
+    }
+
+    &[data-focus-visible]:after {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border-radius: 4px;
+        border: 2px solid var(--highlight-color);
+    }
+}
+
+.react-aria-TabPanel {
+    margin-top: 4px;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+
+    &[data-focus-visible] {
+        box-shadow: inset 0 0 0 2px var(--highlight-color);
+    }
+}

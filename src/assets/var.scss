@@ -2,3 +2,13 @@ $bg4: #184d47;
 $bg3: #035956;
 $bg2: #00917c;
 $bg1: #a5f0c5;
+$g: #d9d9d9;
+
+@mixin glass {
+    background: $g;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
