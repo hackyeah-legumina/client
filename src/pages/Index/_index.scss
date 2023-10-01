@@ -1,6 +1,24 @@
 @use "../../assets/var.scss" as c;
 @use "./components/SearchPanel/search-panel";
 
+.index.search {
+    .index__search {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 1rem;
+
+        button {
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            background-color: c.$bg4;
+            color: c.$g;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    }
+}
+
 .index {
     position: fixed;
     left: 0;

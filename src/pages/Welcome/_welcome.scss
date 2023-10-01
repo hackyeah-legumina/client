@@ -1,0 +1,39 @@
+@use "../../assets/var.scss" as c;
+
+.welcome {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &__wrapper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        @include c.glass;
+    }
+
+    &__logo {
+        svg {
+            transform: scale(0.7);
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        button {
+            font-size: xx-large;
+            padding: 0.5rem 3rem;
+            background-color: c.$bg3;
+            color: c.$bg1;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid c.$bg5;
+            cursor: pointer;
+        }
+    }
+}

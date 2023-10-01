@@ -23,7 +23,7 @@ const SideNav = () => {
   const handleS = () => {
     return setTimeout(() => {
       const a = document.querySelector(".messages__message:last-child")
-      a?.scrollIntoView(false)
+      a?.scrollIntoView({ behavior: "smooth", block: "end", inline: "center" })
     }, 100)
   }
 
@@ -51,8 +51,15 @@ const SideNav = () => {
     .map((m) => m.id)
     .slice(-1)[0] as unknown as string
 
+  console.log(id)
+
   return (
-    <div className={`side-nav ${!isExpanded ? "side-nav--not-expanded" : ""}`}>
+    <div
+      className={`side-nav ${!isExpanded ? "side-nav--not-expanded" : ""}`}
+      style={{
+        opacity: id === "/welcome" ? 0 : 100,
+      }}
+    >
       {user.data?.data.username || !isAuth ? (
         <>
           <div className="side-nav__header">
@@ -98,7 +105,7 @@ const SideNav = () => {
             <div className="side-nav__chat">
               <div onClick={() => navigate({ to: "/chat" })}>
                 {messages.status === "success" ? (
-                  <Messages messages={messages.data} />
+                  <Messages messages={!!user.data?.data ? messages.data : []} />
                 ) : null}
               </div>
             </div>

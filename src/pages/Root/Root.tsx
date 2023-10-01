@@ -14,7 +14,7 @@ const Root = () => {
   const [isExpanded, setIsExpanded] = useState(true)
   return (
     <>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       <SideNavContext.Provider value={{ isExpanded, setIsExpanded }}>
         <ToastContainer
           position="bottom-left"

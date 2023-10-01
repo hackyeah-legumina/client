@@ -41,7 +41,7 @@ const Chat = () => {
 
   const handleS = () => {
     return setTimeout(() => {
-      const a = document.querySelector(".messages__message:last-child")
+      const a = document.querySelector(".chat .messages__message:last-child")
       a?.scrollIntoView(false)
     }, 100)
   }

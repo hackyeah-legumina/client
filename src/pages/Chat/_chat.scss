@@ -4,6 +4,9 @@
     padding: 3rem 10rem;
     color: c.$bg4;
     display: grid;
+    transition:
+        opacity 200ms,
+        display 200ms;
     &__message {
         max-width: 30vw;
         padding: 1rem;

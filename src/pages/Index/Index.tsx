@@ -1,4 +1,4 @@
-import { Input } from "react-aria-components"
+import { Button, Input } from "react-aria-components"
 import { useUser } from "../../hooks/useUser"
 import { useState, useContext, useEffect } from "react"
 import { SideNavContext } from "../Root/Root"
@@ -34,6 +34,18 @@ const Index = () => {
             setString(e.target.value)
           }}
         />
+        {isSearch ? (
+          <Button
+            aria-label="Clear search results"
+            onPress={() => {
+              setIsSearch(false)
+              setString("")
+              setIsExpanded(true)
+            }}
+          >
+            Clear
+          </Button>
+        ) : null}
       </div>
       {!isSearch ? (
         <>
