@@ -14,7 +14,7 @@ const SideNav = () => {
   const logout = useLogout()
   return (
     <div className={`side-nav ${!isExpanded ? "side-nav--not-expanded" : ""}`}>
-      {!isAuth ? (
+      {user.data?.data.username || !isAuth ? (
         <>
           <div className="side-nav__header">
             <div></div>

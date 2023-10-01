@@ -19,16 +19,24 @@
         border-right: 10px solid transparent;
     }
 
-    // &__items-inner {
-    //     width: 90%;
-    //     overflow-y: auto;
-    // }
+    &__items-inner {
+        height: 100%;
+        overflow: scroll;
+    }
 
     &__item {
         display: grid;
         grid-template-columns: 7rem 1fr;
         margin-bottom: 1rem;
         grid-gap: 1rem;
+
+        & > div:nth-child(2) {
+            & > div:first-child {
+                font-size: medium;
+                font-weight: bold;
+                margin-bottom: 0.25rem;
+            }
+        }
 
         & > div:first-child {
             height: 7rem;

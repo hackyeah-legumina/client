@@ -22,8 +22,12 @@ const SearchPanel = ({ string }: { string?: string }) => {
       return axios.get(
         API_URL +
           "/universities?" +
-          citiesArr?.map((c) => `filter=city:${c}`).join("&") +
-          typesArr?.map((c) => `filter=type:${c}`).join("&"),
+          (typeof citiesArr !== "undefined"
+            ? citiesArr?.map((c) => `filter=city:${c}`).join("&")
+            : "") +
+          (typeof typesArr !== "undefined"
+            ? typesArr?.map((c) => `filter=type:${c}`).join("&")
+            : ""),
         {
           params: {
             search: string,

@@ -73,6 +73,7 @@ const Auth = ({
       setRToken(res.data.refreshToken)
       setTimeout(() => {
         user.refetch()
+        setIsAuth(true)
         toast.success("Logged in!")
       }, 50)
     },
