@@ -31,11 +31,20 @@ export const Messages = ({
 
 const Chat = () => {
   const user = useUser()
+  const ref = useRef<HTMLDivElement>(null)
+
   // @ts-ignore
   const { isExpanded, setIsExpanded } = useContext(SideNavContext)
   const [aToken, _] = useLocalStorage<null | string>("accessToken", null)
 
   const [messageStr, setMessageStr] = useState("")
+
+  const handleS = () => {
+    return setTimeout(() => {
+      const a = document.querySelector(".messages__message:last-child")
+      a?.scrollIntoView(false)
+    }, 100)
+  }
 
   const messages = useQuery({
     queryKey: ["messages"],
@@ -47,6 +56,7 @@ const Chat = () => {
           },
         })
         .then((res) => {
+          handleS()
           return res.data
         })
     },
@@ -70,11 +80,14 @@ const Chat = () => {
     },
   })
 
-  const ref = useRef(null)
-
   useEffect(() => {
     setIsExpanded(false)
+    handleS()
   }, [])
+
+  useEffect(() => {
+    handleS()
+  }, [messages.data, message.status])
 
   return (
     <div className="chat">
