@@ -1,6 +1,6 @@
 import { Input } from "react-aria-components"
 import { useUser } from "../../hooks/useUser"
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { SideNavContext } from "../Root/Root"
 import SearchPanel from "./components/SearchPanel/SearchPanel"
 
@@ -16,6 +16,10 @@ const Index = () => {
   const { isExpanded, setIsExpanded } = useContext(SideNavContext)
 
   const [string, setString] = useState("")
+
+  useEffect(() => {
+    setIsExpanded(true)
+  }, [])
 
   return (
     <div className={`index ${isSearch ? "search" : ""}`}>

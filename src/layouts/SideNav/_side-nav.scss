@@ -43,6 +43,10 @@
                     display: none;
                 }
             }
+
+            &__content {
+                visibility: hidden;
+            }
         }
     }
 
@@ -80,6 +84,44 @@
             margin-right: 3rem;
             margin-bottom: 1rem;
         }
+    }
+
+    &__nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5rem;
+        justify-content: space-between;
+        justify-items: stretch;
+        margin: 3rem 0;
+
+        & > div {
+            & > div:first-child {
+                height: 7rem;
+                width: 7rem;
+                background-color: c.$bg4;
+                border-radius: 1rem;
+                margin: auto;
+                cursor: pointer;
+            }
+            & > div:last-child {
+                margin-top: 1rem;
+                text-align: center;
+            }
+        }
+    }
+
+    &__chat-label {
+        margin-left: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__chat {
+        background-color: c.$bg4;
+        height: 20rem;
+        overflow-y: hidden;
+        margin: 0 2rem;
+        border-radius: 1rem;
+        cursor: pointer;
     }
 
     button {
