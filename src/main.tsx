@@ -13,6 +13,7 @@ import "./App.scss"
 import "react-toastify/dist/ReactToastify.css"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { TanStackRouterDevtools } from "@tanstack/router-devtools"
+import Chat from "./pages/Chat/Chat.tsx"
 
 const rootRoute = new RootRoute({
   component: Root,
@@ -24,13 +25,13 @@ const indexRoute = new Route({
   component: Index,
 })
 
-const loginRoute = new Route({
+const chatRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: "/login",
-  component: Index,
+  path: "chat",
+  component: Chat,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute, loginRoute])
+const routeTree = rootRoute.addChildren([indexRoute, chatRoute])
 
 const router = new Router({ routeTree })
 
